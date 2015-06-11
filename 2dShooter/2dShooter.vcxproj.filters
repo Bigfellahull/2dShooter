@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Content">
+      <UniqueIdentifier>{c16427bb-e9dd-494d-b7a0-faa89605b33c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Content\Sprites">
+      <UniqueIdentifier>{8fa59aeb-166f-4de3-a8b9-cb52dc3079e4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="2dShooter.h" />
+    <ClInclude Include="Art.h" />
+    <ClInclude Include="BasicTimer.h" />
+    <ClInclude Include="BlackHole.h" />
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CircularArray.h" />
+    <ClInclude Include="ColourUtility.h" />
+    <ClInclude Include="DirectXHelper.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemySpawner.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="EntityManager.h" />
+    <ClInclude Include="FpsCounter.h" />
+    <ClInclude Include="InputManager.h" />
+    <ClInclude Include="MathHelper.h" />
+    <ClInclude Include="ParticleManager.h" />
+    <ClInclude Include="PlayerShip.h" />
+    <ClInclude Include="PlayerStatus.h" />
+    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Texture2d.h" />
+    <ClInclude Include="Viewport.h" />
+    <ClInclude Include="RenderTarget2d.h" />
+    <ClInclude Include="BloomCBuffers.h" />
+    <ClInclude Include="ReadData.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="2dShooter.cpp" />
+    <ClCompile Include="Art.cpp" />
+    <ClCompile Include="BasicTimer.cpp" />
+    <ClCompile Include="BlackHole.cpp" />
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="ColourUtility.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemySpawner.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EntityManager.cpp" />
+    <ClCompile Include="FpsCounter.cpp" />
+    <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="MathHelper.cpp" />
+    <ClCompile Include="ParticleManager.cpp" />
+    <ClCompile Include="PlayerShip.cpp" />
+    <ClCompile Include="PlayerStatus.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Texture2d.cpp" />
+    <ClCompile Include="RenderTarget2d.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageContentTask Include="Content\Sprites\Bullet.png">
+      <Filter>Content\Sprites</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Content\Sprites\Glow.png">
+      <Filter>Content\Sprites</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Content\Sprites\Laser.png">
+      <Filter>Content\Sprites</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Content\Sprites\Player.png">
+      <Filter>Content\Sprites</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Content\Sprites\Pointer.png">
+      <Filter>Content\Sprites</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Content\Sprites\Seeker.png">
+      <Filter>Content\Sprites</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Content\Sprites\Wanderer.png">
+      <Filter>Content\Sprites</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Content\Sprites\1x1.png">
+      <Filter>Content\Sprites</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Content\Sprites\BlackHole.png">
+      <Filter>Content\Sprites</Filter>
+    </ImageContentTask>
+    <ImageContentTask Include="Content\Sprites\Starfield.jpg">
+      <Filter>Content\Sprites</Filter>
+    </ImageContentTask>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\italic.spritefont">
+      <Filter>Content</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="BloomExtractPixelShader.hlsl" />
+    <FxCompile Include="BloomCombinePixelShader.hlsl" />
+    <FxCompile Include="BloomBlurPixelShader.hlsl" />
+  </ItemGroup>
+</Project>
