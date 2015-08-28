@@ -13,13 +13,26 @@
 
 #pragma once
 
+#if (_WIN32_WINNT < 0x0A00 /*_WIN32_WINNT_WIN10*/)
 #ifndef _XBOX_ONE
 #if !defined(WINAPI_FAMILY) || (WINAPI_FAMILY != WINAPI_FAMILY_PHONE_APP)
-#if (_WIN32_WINNT >= 0x0602)
+#if (_WIN32_WINNT >= 0x0602 /*_WIN32_WINNT_WIN8*/ )
 #pragma comment(lib,"xinput.lib")
 #else
 #pragma comment(lib,"xinput9_1_0.lib")
 #endif
+#endif
+#endif
+#endif
+
+// VS 2010/2012 do not support =default =delete
+#ifndef DIRECTX_CTOR_DEFAULT
+#if defined(_MSC_VER) && (_MSC_VER < 1800)
+#define DIRECTX_CTOR_DEFAULT {}
+#define DIRECTX_CTOR_DELETE ;
+#else
+#define DIRECTX_CTOR_DEFAULT =default;
+#define DIRECTX_CTOR_DELETE =delete;
 #endif
 #endif
 
@@ -31,6 +44,7 @@
 #include <intsafe.h>
 #pragma warning(pop)
 
+
 namespace DirectX
 {
     class GamePad
@@ -41,7 +55,7 @@ namespace DirectX
         GamePad& operator= (GamePad&& moveFrom);
         virtual ~GamePad();
 
-#ifdef _XBOX_ONE
+#if (_WIN32_WINNT >= 0x0A00 /*_WIN32_WINNT_WIN10*/ ) || defined(_XBOX_ONE)
         static const int MAX_PLAYER_COUNT = 8;
 #else
         static const int MAX_PLAYER_COUNT = 4;
@@ -214,6 +228,9 @@ namespace DirectX
         void __cdecl Suspend();
         void __cdecl Resume();
 
+        // Singleton
+        static GamePad& __cdecl Get();
+
     private:
         // Private implementation.
         class Impl;
@@ -221,7 +238,7 @@ namespace DirectX
         std::unique_ptr<Impl> pImpl;
 
         // Prevent copying.
-        GamePad(GamePad const&);
-        GamePad& operator=(GamePad const&);
+        GamePad(GamePad const&) DIRECTX_CTOR_DELETE
+        GamePad& operator=(GamePad const&) DIRECTX_CTOR_DELETE
     };
 }

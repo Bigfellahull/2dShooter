@@ -34,7 +34,7 @@
 #include <intsafe.h>
 #pragma warning(pop)
 
-#include <wrl.h>
+#include <wrl\client.h>
 
 // VS 2010 doesn't support explicit calling convention for std::function
 #ifndef DIRECTX_STD_CALLCONV
@@ -58,11 +58,13 @@ namespace DirectX
     class CommonStates;
     class ModelMesh;
 
+    //----------------------------------------------------------------------------------
     // Each mesh part is a submesh with a single effect
     class ModelMeshPart
     {
     public:
         ModelMeshPart();
+        virtual ~ModelMeshPart();
 
         uint32_t                                                indexCount;
         uint32_t                                                startIndex;
@@ -91,11 +93,13 @@ namespace DirectX
     };
 
 
-    // A mesh consists of one or more model parts
+    //----------------------------------------------------------------------------------
+    // A mesh consists of one or more model mesh parts
     class ModelMesh
     {
     public:
         ModelMesh();
+        virtual ~ModelMesh();
 
         BoundingSphere              boundingSphere;
         BoundingBox                 boundingBox;
@@ -115,10 +119,13 @@ namespace DirectX
     };
 
 
+    //----------------------------------------------------------------------------------
     // A model consists of one or more meshes
     class Model
     {
     public:
+        virtual ~Model();
+
         ModelMesh::Collection   meshes;
         std::wstring            name;
 

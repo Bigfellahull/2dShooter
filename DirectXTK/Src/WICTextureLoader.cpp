@@ -41,8 +41,8 @@
 #include "DirectXHelpers.h"
 #include "PlatformHelpers.h"
 
-using Microsoft::WRL::ComPtr;
 using namespace DirectX;
+using Microsoft::WRL::ComPtr;
 
 //-------------------------------------------------------------------------------------
 // WIC Pixel Format Translation Data
@@ -685,7 +685,6 @@ static HRESULT CreateTextureFromWIC( _In_ ID3D11Device* d3dDevice,
 #if defined(_XBOX_ONE) && defined(_TITLE)
                 ID3D11Texture2D *pStaging = nullptr;
                 CD3D11_TEXTURE2D_DESC stagingDesc( format, twidth, theight, 1, 1, 0, D3D11_USAGE_STAGING, D3D11_CPU_ACCESS_READ, 1, 0, 0 );
-                D3D11_SUBRESOURCE_DATA initData;
                 initData.pSysMem =  temp.get();
                 initData.SysMemPitch = static_cast<UINT>(rowPitch);
                 initData.SysMemSlicePitch = static_cast<UINT>(imageSize);
@@ -1002,6 +1001,16 @@ HRESULT DirectX::CreateWICTextureFromFileEx( ID3D11Device* d3dDevice,
 #if !defined(NO_D3D11_DEBUG_NAME) && ( defined(_DEBUG) || defined(PROFILE) )
     if ( SUCCEEDED(hr) )
     {
+        #if defined(_XBOX_ONE) && defined(_TITLE)
+        if (texture != 0 && *texture != 0)
+        {
+            (*texture)->SetName( fileName );
+        }
+        if (textureView != 0 && *textureView != 0 )
+        {
+            (*textureView)->SetName( fileName );
+        }
+        #else
         if (texture != 0 || textureView != 0)
         {
             CHAR strFileA[MAX_PATH];
@@ -1043,6 +1052,7 @@ HRESULT DirectX::CreateWICTextureFromFileEx( ID3D11Device* d3dDevice,
                 }
             }
         }
+        #endif
     }
 #endif
 
@@ -1105,6 +1115,16 @@ HRESULT DirectX::CreateWICTextureFromFileEx( ID3D11Device* d3dDevice,
 #if !defined(NO_D3D11_DEBUG_NAME) && ( defined(_DEBUG) || defined(PROFILE) )
     if ( SUCCEEDED(hr) )
     {
+        #if defined(_XBOX_ONE) && defined(_TITLE)
+        if (texture != 0 && *texture != 0)
+        {
+            (*texture)->SetName( fileName );
+        }
+        if (textureView != 0 && *textureView != 0 )
+        {
+            (*textureView)->SetName( fileName );
+        }
+        #else
         if (texture != 0 || textureView != 0)
         {
             CHAR strFileA[MAX_PATH];
@@ -1146,6 +1166,7 @@ HRESULT DirectX::CreateWICTextureFromFileEx( ID3D11Device* d3dDevice,
                 }
             }
         }
+        #endif
     }
 #endif
 

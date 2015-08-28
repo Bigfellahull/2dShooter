@@ -22,7 +22,8 @@
 #include "BinaryReader.h"
 
 using namespace DirectX;
-using namespace Microsoft::WRL;
+using Microsoft::WRL::ComPtr;
+
 
 //--------------------------------------------------------------------------------------
 // The VBO file format was introduced in the Windows 8.0 ResourceLoading sample. It's
@@ -195,7 +196,7 @@ std::unique_ptr<Model> DirectX::Model::CreateFromVBO(ID3D11Device* d3dDevice, co
     HRESULT hr = BinaryReader::ReadEntireFile( szFileName, data, &dataSize );
     if ( FAILED(hr) )
     {
-        DebugTrace( "CreateFromVBO failed (%08X) loading '%S'\n", hr, szFileName );
+        DebugTrace( "CreateFromVBO failed (%08X) loading '%ls'\n", hr, szFileName );
         throw std::exception( "CreateFromVBO" );
     }
 

@@ -122,6 +122,12 @@
     <ClCompile Include="Src\ModelLoadVBO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Keyboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Mouse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\AlignedNew.h">
@@ -211,6 +217,12 @@
     <ClInclude Include="Inc\GamePad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Inc\Keyboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Mouse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Src\TeapotData.inc">
@@ -264,7 +276,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Readme.txt">
-      <Filter>Source Files\Shaders</Filter>
+      <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>
 </Project>

@@ -101,6 +101,12 @@
     <ClInclude Include="Inc\GamePad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Inc\Keyboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Mouse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\AlphaTestEffect.cpp">
@@ -203,6 +209,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Src\ModelLoadVBO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Keyboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Mouse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

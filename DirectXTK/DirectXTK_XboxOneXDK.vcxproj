@@ -15,38 +15,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Audio\AudioEngine.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Profile|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
+    <ClCompile Include="Audio\AudioEngine.cpp" />
     <ClCompile Include="Audio\DynamicSoundEffectInstance.cpp" />
     <ClCompile Include="Audio\SoundCommon.cpp" />
-    <ClCompile Include="Audio\SoundEffect.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Profile|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <ClCompile Include="Audio\SoundEffectInstance.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Profile|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <ClCompile Include="Audio\WaveBank.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Profile|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <ClCompile Include="Audio\WaveBankReader.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Profile|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <ClCompile Include="Audio\WAVFileReader.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Profile|Durango'">$(ProjectDir)Inc;$(ProjectDir)Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
+    <ClCompile Include="Audio\SoundEffect.cpp" />
+    <ClCompile Include="Audio\SoundEffectInstance.cpp" />
+    <ClCompile Include="Audio\WaveBank.cpp" />
+    <ClCompile Include="Audio\WaveBankReader.cpp" />
+    <ClCompile Include="Audio\WAVFileReader.cpp" />
     <ClCompile Include="Src\AlphaTestEffect.cpp" />
     <ClCompile Include="Src\BasicEffect.cpp" />
     <ClCompile Include="Src\BinaryReader.cpp" />
@@ -60,10 +36,12 @@
     <ClCompile Include="Src\EnvironmentMapEffect.cpp" />
     <ClCompile Include="Src\GamePad.cpp" />
     <ClCompile Include="Src\GeometricPrimitive.cpp" />
+    <ClCompile Include="Src\Keyboard.cpp" />
     <ClCompile Include="Src\Model.cpp" />
     <ClCompile Include="Src\ModelLoadCMO.cpp" />
     <ClCompile Include="Src\ModelLoadSDKMESH.cpp" />
     <ClCompile Include="Src\ModelLoadVBO.cpp" />
+    <ClCompile Include="Src\Mouse.cpp" />
     <ClCompile Include="Src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Durango'">Create</PrecompiledHeader>
@@ -90,7 +68,9 @@
     <ClInclude Include="Inc\Effects.h" />
     <ClInclude Include="Inc\GamePad.h" />
     <ClInclude Include="Inc\GeometricPrimitive.h" />
+    <ClInclude Include="Inc\Keyboard.h" />
     <ClInclude Include="Inc\Model.h" />
+    <ClInclude Include="Inc\Mouse.h" />
     <ClInclude Include="Inc\PrimitiveBatch.h" />
     <ClInclude Include="Inc\ScreenGrab.h" />
     <ClInclude Include="Inc\SimpleMath.h" />
@@ -154,7 +134,7 @@
     </None>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <RootNamespace>DirectXTK_XboxOneXDK</RootNamespace>
+    <RootNamespace>DirectXTK</RootNamespace>
     <ProjectGuid>{82343615-ec75-4d49-9aa9-74c8c864d3b4}</ProjectGuid>
     <DefaultLanguage>en-US</DefaultLanguage>
     <Keyword>Win32Proj</Keyword>
@@ -168,7 +148,6 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <PlatformToolset>v110</PlatformToolset>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <EmbedManifest>false</EmbedManifest>
     <GenerateManifest>false</GenerateManifest>
@@ -177,7 +156,6 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <PlatformToolset>v110</PlatformToolset>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <EmbedManifest>false</EmbedManifest>
     <GenerateManifest>false</GenerateManifest>

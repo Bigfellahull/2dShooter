@@ -25,7 +25,7 @@
 #include "AlignedNew.h"
 
 using namespace DirectX;
-using namespace Microsoft::WRL;
+using Microsoft::WRL::ComPtr;
 
 
 // Internal SpriteBatch implementation class.
@@ -700,7 +700,7 @@ void SpriteBatch::Impl::RenderBatch(_In_ ID3D11ShaderResourceView* texture, _In_
             deviceContext->Map(mContextResources->vertexBuffer.Get(), 0, mapType, 0, &mappedBuffer)
         );
 
-        VertexPositionColorTexture* vertices = (VertexPositionColorTexture*)mappedBuffer.pData + mContextResources->vertexBufferPosition * VerticesPerSprite;
+        auto vertices = static_cast<VertexPositionColorTexture*>(mappedBuffer.pData) + mContextResources->vertexBufferPosition * VerticesPerSprite;
 
         // Generate sprite vertex data.
         for (size_t i = 0; i < batchSize; i++)

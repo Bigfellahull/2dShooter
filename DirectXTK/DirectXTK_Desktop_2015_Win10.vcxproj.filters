@@ -36,9 +36,6 @@
     <ClInclude Include="Src\ConstantBuffer.h">
       <Filter>Src</Filter>
     </ClInclude>
-    <ClInclude Include="Src\BinaryReader.h">
-      <Filter>Src</Filter>
-    </ClInclude>
     <ClInclude Include="Src\pch.h">
       <Filter>Src</Filter>
     </ClInclude>
@@ -72,6 +69,9 @@
     <ClInclude Include="Inc\WICTextureLoader.h">
       <Filter>Inc</Filter>
     </ClInclude>
+    <ClInclude Include="Src\BinaryReader.h">
+      <Filter>Src</Filter>
+    </ClInclude>
     <ClInclude Include="Inc\Model.h">
       <Filter>Inc</Filter>
     </ClInclude>
@@ -85,6 +85,24 @@
       <Filter>Inc</Filter>
     </ClInclude>
     <ClInclude Include="Inc\GamePad.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Audio.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio\WAVFileReader.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio\WaveBankReader.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio\SoundCommon.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Keyboard.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Mouse.h">
       <Filter>Inc</Filter>
     </ClInclude>
   </ItemGroup>
@@ -110,10 +128,10 @@
     <ClCompile Include="Src\BasicEffect.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="Src\BinaryReader.cpp">
+    <ClCompile Include="Src\GeometricPrimitive.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="Src\GeometricPrimitive.cpp">
+    <ClCompile Include="Src\BinaryReader.cpp">
       <Filter>Src</Filter>
     </ClCompile>
     <ClCompile Include="Src\EffectCommon.cpp">
@@ -143,13 +161,13 @@
     <ClCompile Include="Src\ScreenGrab.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Model.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
     <ClCompile Include="Src\ModelLoadCMO.cpp">
       <Filter>Src</Filter>
     </ClCompile>
     <ClCompile Include="Src\ModelLoadSDKMESH.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Model.cpp">
       <Filter>Src</Filter>
     </ClCompile>
     <ClCompile Include="Src\DGSLEffect.cpp">
@@ -165,6 +183,36 @@
       <Filter>Src</Filter>
     </ClCompile>
     <ClCompile Include="Src\ModelLoadVBO.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\WAVFileReader.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\WaveBankReader.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\WaveBank.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\SoundEffectInstance.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\SoundEffect.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\SoundCommon.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\DynamicSoundEffectInstance.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\AudioEngine.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Keyboard.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Mouse.cpp">
       <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>

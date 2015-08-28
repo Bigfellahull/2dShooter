@@ -43,10 +43,10 @@
     <ClCompile Include="SoundEffectInstance.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="DynamicSoundEffectInstance.cpp">
+    <ClCompile Include="SoundCommon.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="SoundCommon.cpp">
+    <ClCompile Include="DynamicSoundEffectInstance.cpp">
       <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -25,7 +25,9 @@
     <ClInclude Include="Inc\Effects.h" />
     <ClInclude Include="Inc\GamePad.h" />
     <ClInclude Include="Inc\GeometricPrimitive.h" />
+    <ClInclude Include="Inc\Keyboard.h" />
     <ClInclude Include="Inc\Model.h" />
+    <ClInclude Include="Inc\Mouse.h" />
     <ClInclude Include="Inc\SimpleMath.h" />
     <ClInclude Include="Inc\SimpleMath.inl" />
     <ClInclude Include="Inc\ScreenGrab.h" />
@@ -59,10 +61,12 @@
     <ClCompile Include="Src\EnvironmentMapEffect.cpp" />
     <ClCompile Include="Src\GamePad.cpp" />
     <ClCompile Include="Src\GeometricPrimitive.cpp" />
+    <ClCompile Include="Src\Keyboard.cpp" />
     <ClCompile Include="Src\Model.cpp" />
     <ClCompile Include="Src\ModelLoadCMO.cpp" />
     <ClCompile Include="Src\ModelLoadSDKMESH.cpp" />
     <ClCompile Include="Src\ModelLoadVBO.cpp" />
+    <ClCompile Include="Src\Mouse.cpp" />
     <ClCompile Include="Src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -118,7 +122,9 @@
       <FileType>Document</FileType>
     </None>
   </ItemGroup>
-  <PropertyGroup Label="Globals" />
+  <PropertyGroup Label="Globals">
+    <VCTargetsPath Condition="'$(VCTargetsPath11)' != '' and '$(VSVersion)' == '' and '$(VisualStudioVersion)' == ''">$(VCTargetsPath11)</VCTargetsPath>
+  </PropertyGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{E0B52AE7-E160-4D32-BF3F-910B785E5A8E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -128,27 +134,25 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -230,7 +234,6 @@
       <PreprocessorDefinitions>_WIN32_WINNT=0x0600;_WIN7_PLATFORM_UPDATE;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(ProjectDir)Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <WholeProgramOptimization>true</WholeProgramOptimization>
       <FloatingPointModel>Fast</FloatingPointModel>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
@@ -251,7 +254,6 @@
       <PreprocessorDefinitions>_WIN32_WINNT=0x0600;_WIN7_PLATFORM_UPDATE;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(ProjectDir)Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <WholeProgramOptimization>true</WholeProgramOptimization>
       <FloatingPointModel>Fast</FloatingPointModel>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
