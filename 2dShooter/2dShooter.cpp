@@ -297,7 +297,7 @@ HRESULT InitDevice()
     d3dDeviceContext->RSSetViewports(1, &vp);
 
 	// Set the viewport on our helper wrapper
-	Viewport::GetInstance()->SetViewport(vp);
+	SGS2D::Viewport::GetInstance()->SetViewport(vp);
 
     return S_OK;
 }
@@ -361,7 +361,7 @@ void LoadContent()
 {
 	Art::GetInstance()->Load(*d3dDevice);
 
-    camera.reset(new Camera(Viewport::GetInstance()));
+    camera.reset(new Camera(SGS2D::Viewport::GetInstance()));
 	
 	fpsCounter.reset(new FpsCounter());
 	spriteBatch.reset(new SpriteBatch(d3dDeviceContext));
@@ -372,9 +372,9 @@ void LoadContent()
 	EntityManager::GetInstance()->Add(PlayerShip::GetInstance());
 
     // Bloom
-    sceneRenderTarget.CreateRenderTarget(d3dDevice, Viewport::GetInstance()->GetWidth(), Viewport::GetInstance()->GetHeight());
-    renderTargetOne.CreateRenderTarget(d3dDevice, Viewport::GetInstance()->GetWidth() * 0.25f, Viewport::GetInstance()->GetHeight() * 0.25f);
-    renderTargetTwo.CreateRenderTarget(d3dDevice, Viewport::GetInstance()->GetWidth() * 0.25f, Viewport::GetInstance()->GetHeight() * 0.25f);
+    sceneRenderTarget.CreateRenderTarget(d3dDevice, SGS2D::Viewport::GetInstance()->GetWidth(), SGS2D::Viewport::GetInstance()->GetHeight());
+    renderTargetOne.CreateRenderTarget(d3dDevice, SGS2D::Viewport::GetInstance()->GetWidth() * 0.25f, SGS2D::Viewport::GetInstance()->GetHeight() * 0.25f);
+    renderTargetTwo.CreateRenderTarget(d3dDevice, SGS2D::Viewport::GetInstance()->GetWidth() * 0.25f, SGS2D::Viewport::GetInstance()->GetHeight() * 0.25f);
 
     extractCBuffer = BloomExtractCBuffer(0.25f);
     blurCBuffer = BloomBlurCBuffer();
@@ -469,7 +469,7 @@ void Render(float totalTime, float deltaTime)
 
     spriteBatch->Begin(SpriteSortMode::SpriteSortMode_Texture, states.Additive());
 
-    spriteBatch->Draw(Art::GetInstance()->GetStarfield()->GetSrv(), Viewport::GetInstance()->GetBounds().ToRect(), Vector4(1.0f, 1.0f, 1.0f, 0.5f));
+    spriteBatch->Draw(Art::GetInstance()->GetStarfield()->GetSrv(), SGS2D::Viewport::GetInstance()->GetBounds().ToRect(), Vector4(1.0f, 1.0f, 1.0f, 0.5f));
 
     spriteBatch->End();
 
@@ -719,7 +719,7 @@ void Render(float totalTime, float deltaTime)
         });
 
         //// Make sure to scale everything to fit the back buffer.
-        RECT rect = { 0L, 0L, static_cast<LONG>(Viewport::GetInstance()->GetWidth()), static_cast<LONG>(Viewport::GetInstance()->GetHeight()) };
+        RECT rect = { 0L, 0L, static_cast<LONG>(SGS2D::Viewport::GetInstance()->GetWidth()), static_cast<LONG>(SGS2D::Viewport::GetInstance()->GetHeight()) };
         spriteBatch->Draw(renderTargetOne.GetSrv(), rect, nullptr);
         spriteBatch->End();
         context->PSSetShaderResources(0, 1, nullSRV);
@@ -739,12 +739,12 @@ void Render(float totalTime, float deltaTime)
     }
     else
     {
-        spriteFont->DrawString(spriteBatch.get(), L"GAME OVER MAN", Vector2((Viewport::GetInstance()->GetWidth() / 2.0f) - 65.0f, (Viewport::GetInstance()->GetHeight() / 2.0f) - 20.0f), Colors::White, 0.0, Vector2(0, 0), 0.5);
+        spriteFont->DrawString(spriteBatch.get(), L"GAME OVER MAN", Vector2((SGS2D::Viewport::GetInstance()->GetWidth() / 2.0f) - 65.0f, (SGS2D::Viewport::GetInstance()->GetHeight() / 2.0f) - 20.0f), Colors::White, 0.0, Vector2(0, 0), 0.5);
     }
 
-    fpsCounter->Draw(*spriteBatch, *spriteFont, Vector2(10, Viewport::GetInstance()->GetHeight() - 100));
-    spriteFont->DrawString(spriteBatch.get(), (L"Entity Count: " + std::to_wstring(EntityManager::GetInstance()->GetEntityCount())).c_str(), Vector2(10, Viewport::GetInstance()->GetHeight() - 70), Colors::White, 0.0, Vector2(0, 0), 0.5);
-    spriteFont->DrawString(spriteBatch.get(), (L"Particle Count: " + std::to_wstring(ParticleManager::GetInstance()->ParticleCount())).c_str(), Vector2(10, Viewport::GetInstance()->GetHeight() - 40), Colors::White, 0.0, Vector2(0, 0), 0.5);
+	fpsCounter->Draw(*spriteBatch, *spriteFont, Vector2(10, SGS2D::Viewport::GetInstance()->GetHeight() - 100));
+    spriteFont->DrawString(spriteBatch.get(), (L"Entity Count: " + std::to_wstring(EntityManager::GetInstance()->GetEntityCount())).c_str(), Vector2(10, SGS2D::Viewport::GetInstance()->GetHeight() - 70), Colors::White, 0.0, Vector2(0, 0), 0.5);
+    spriteFont->DrawString(spriteBatch.get(), (L"Particle Count: " + std::to_wstring(ParticleManager::GetInstance()->ParticleCount())).c_str(), Vector2(10, SGS2D::Viewport::GetInstance()->GetHeight() - 40), Colors::White, 0.0, Vector2(0, 0), 0.5);
 	
 	spriteBatch->End();
 

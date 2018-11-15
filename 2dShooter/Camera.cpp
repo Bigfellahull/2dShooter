@@ -8,7 +8,7 @@ using namespace DirectX::SimpleMath;
 
 const float Camera::MinZoom = 0.1f;
 
-Camera::Camera(Viewport* vp) :
+Camera::Camera(SGS2D::Viewport* vp) :
     _viewport(vp),
     _position(Vector2(0, 0)),
     _limits(),

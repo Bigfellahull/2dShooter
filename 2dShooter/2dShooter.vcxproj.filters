@@ -96,6 +96,7 @@
     <None Include="Content\italic.spritefont">
       <Filter>Content</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="BloomExtractPixelShader.hlsl" />
